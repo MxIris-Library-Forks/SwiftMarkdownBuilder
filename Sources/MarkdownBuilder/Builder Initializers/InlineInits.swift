@@ -7,11 +7,12 @@
 
 #if swift(>=5.1)
 import Markdown
+import ArrayBuilderModule
 
 public extension Emphasis {
 
   @inlinable
-  init(@InlineContentBuilder content: () -> [ InlineMarkup ]) {
+  init(@ArrayBuilder<InlineMarkup> content: () -> [ InlineMarkup ]) {
     self.init(content())
   }
 }
@@ -19,14 +20,14 @@ public extension Emphasis {
 public extension Strong {
 
   @inlinable
-  init(@InlineContentBuilder content: () -> [ InlineMarkup ]) {
+  init(@ArrayBuilder<InlineMarkup> content: () -> [ InlineMarkup ]) {
     self.init(content())
   }
 }
 public extension Strikethrough {
 
   @inlinable
-  init(@InlineContentBuilder content: () -> [ InlineMarkup ]) {
+  init(@ArrayBuilder<InlineMarkup> content: () -> [ InlineMarkup ]) {
     self.init(content())
   }
 }

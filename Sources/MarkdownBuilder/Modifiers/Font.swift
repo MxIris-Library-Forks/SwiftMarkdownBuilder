@@ -8,26 +8,26 @@
 public enum Font: Equatable {
 
   // `#`
-  case largeTitle
+  case h1
 
   // `##`
-  case title
+  case h2
 
   // `###`
-  case title2
+  case h3
 
   // `####`
-  case title3
+  case h4
 }
 
 extension Font {
   
   var level : Int {
     switch self {
-      case .largeTitle : return 1
-      case .title      : return 2
-      case .title2     : return 3
-      case .title3     : return 4
+      case .h1 : return 1
+      case .h2      : return 2
+      case .h3     : return 3
+      case .h4     : return 4
     }
   }
 }

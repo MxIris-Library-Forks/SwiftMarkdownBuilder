@@ -67,7 +67,7 @@ class MarkdownBuilderTests: XCTestCase {
     
     let doc = Document {
       "Hello Custom View!"
-        .font(.largeTitle)
+        .font(.h1)
 
       MyText(title: "The title")
     }

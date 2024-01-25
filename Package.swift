@@ -15,12 +15,17 @@ let package = Package(
   
   dependencies: [
       .package(url: "https://github.com/apple/swift-markdown.git", 
-               .branch("main"))
+               .branch("main")),
+      .package(
+          url: "https://github.com/WilhelmOks/ArrayBuilder",
+          .upToNextMajor(from: "1.0.0")
+      ),
   ],
   
   targets: [
       .target(name: "MarkdownBuilder", dependencies: [ 
-        .product(name: "Markdown", package: "swift-markdown") 
+        .product(name: "Markdown", package: "swift-markdown"),
+        .product(name: "ArrayBuilderModule", package: "ArrayBuilder")
       ]),
       
       .testTarget(name: "MarkdownBuilderTests", dependencies: [ 

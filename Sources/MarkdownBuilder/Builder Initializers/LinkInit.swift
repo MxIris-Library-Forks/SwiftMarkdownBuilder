@@ -7,7 +7,7 @@
 
 #if swift(>=5.1)
 import Markdown
-
+import ArrayBuilderModule
 #if canImport(Foundation)
   import Foundation
 #endif
@@ -16,7 +16,7 @@ public extension Link {
 
 #if canImport(Foundation)
   @inlinable
-  init(destination: URL, @RecurringInlineContentBuilder
+  init(destination: URL, @ArrayBuilder<RecurringInlineMarkup>
                             content: () -> [ RecurringInlineMarkup ])
   {
     self.init(destination: destination.absoluteString, content())
@@ -29,7 +29,7 @@ public extension Link {
 #endif
 
   @inlinable
-  init(destination: String?, @RecurringInlineContentBuilder
+  init(destination: String?, @ArrayBuilder<RecurringInlineMarkup>
                                content: () -> [ RecurringInlineMarkup ])
   {
     self.init(destination: destination, content())

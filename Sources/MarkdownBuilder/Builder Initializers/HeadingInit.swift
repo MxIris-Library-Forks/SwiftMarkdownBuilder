@@ -7,11 +7,12 @@
 
 #if swift(>=5.1)
 import Markdown
+import ArrayBuilderModule
 
 public extension Heading { // BlockMarkup, BasicInlineContainer
 
   @inlinable
-  init(level: Int = 1, @InlineContentBuilder content: () -> [ InlineMarkup ]) {
+  init(level: Int = 1, @ArrayBuilder<InlineMarkup> content: () -> [ InlineMarkup ]) {
     self.init(level: level, content())
   }
 }
